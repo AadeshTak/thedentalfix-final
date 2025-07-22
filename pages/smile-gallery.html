@@ -777,19 +777,6 @@
 
               <div class="smile-set swiper-slide">
                 <figure class="smile-img-wrap">
-                  <img src="/assets/images/smile-gallery/case49/before.webp"
-                    alt="Patient smile before treatment - showing spacing issues" class="smile-img" loading="lazy" />
-                  <figcaption class="smile-caption">Before</figcaption>
-                </figure>
-                <figure class="smile-img-wrap">
-                  <img src="/assets/images/smile-gallery/case49/after.webp"
-                    alt="Patient smile after treatment - showing perfect spacing" class="smile-img" loading="lazy" />
-                  <figcaption class="smile-caption">After</figcaption>
-                </figure>
-              </div>
-
-              <div class="smile-set swiper-slide">
-                <figure class="smile-img-wrap">
                   <img src="/assets/images/smile-gallery/case50/before.webp"
                     alt="Patient smile before treatment - showing spacing issues" class="smile-img" loading="lazy" />
                   <figcaption class="smile-caption">Before</figcaption>
@@ -875,7 +862,10 @@
   <script src="/js/scroll-animations.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Initialize Swiper carousels
+    document.querySelectorAll('.smile-img').forEach(img => {
+      const preloadImg = new Image();
+      preloadImg.src = img.src;
+    });
     document.querySelectorAll('.smile-row-carousel').forEach((carousel) => {
       new Swiper(carousel, {
         slidesPerView: 'auto',
@@ -888,7 +878,13 @@
           delay: 5000,
           disableOnInteraction: false,
         },
-        loop: false,
+        loop: true,
+        preloadImages: false,
+        lazy: {
+          loadPrevNext: true,
+          loadPrevNextAmount: 2,
+          loadOnTransitionStart: true,
+        },
         a11y: {
           enabled: true,
           prevSlideMessage: 'Previous transformation',
