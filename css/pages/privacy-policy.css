@@ -1,0 +1,62 @@
+/* Privacy Policy Page - Plain Text Styles */
+
+.privacy-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #222;
+  background: none;
+  font-family: inherit;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 5rem;
+}
+
+.privacy-main h2,
+.privacy-main h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.privacy-main ul,
+.privacy-main ol {
+  margin-left: 1.5rem;
+  list-style: disc;
+}
+
+.privacy-main li {
+  margin-bottom: 0.5rem;
+}
+
+.privacy-main li:first-child {
+  margin-top: 0.5rem;
+}
+
+.privacy-main strong,
+.privacy-main b {
+  font-weight: bold;
+}
+
+.privacy-main a {
+  color: inherit;
+}
+
+.privacy-main section {
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 480px) {
+  .title {
+    margin-bottom: 2rem;
+    font-size: var(--fs-3xl);
+    text-align: left;
+  }
+}

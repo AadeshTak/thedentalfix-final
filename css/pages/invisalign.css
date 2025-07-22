@@ -1,0 +1,2358 @@
+/* =====================================================================
+   GLOBAL STYLES & UTILITIES
+===================================================================== */
+
+/* Registered mark fix */
+.reg-mark {
+  display: inline;
+  transform: none !important;
+  font-style: normal;
+  direction: ltr;
+  font-size: 40%;
+}
+
+.invis-section {
+  padding-block: var(--spacing-2xl);
+}
+
+.invis-eyebrow {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.invis-heading {
+  line-height: 1.1;
+}
+
+/* Background variants */
+.bg-alt {
+  background-color: var(--clr-bg-secondary, #f8f9fa);
+}
+
+/* Text variants */
+.text-highlight {
+  color: var(--clr-accent, #dbb43a);
+  font-weight: 700;
+}
+
+.break-after {
+  display: block;
+}
+
+/* =====================================================================
+   1. HERO CAROUSEL
+===================================================================== */
+
+.hero-carousel {
+  min-height: calc(100vh - 84px);
+  height: calc(100vh - 84px);
+  padding: 0;
+  background: var(--clr-bg-secondary);
+  position: relative;
+}
+
+.hero-swiper,
+.hero-slide {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-slide.hero-slide {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding: 0;
+  opacity: 0 !important;
+  transition: opacity 0.7s ease !important;
+  will-change: opacity;
+}
+
+.swiper-slide-active.hero-slide {
+  opacity: 1 !important;
+}
+
+.hero-img-wrap {
+  flex: 0 0 50%;
+  max-width: 50%;
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  background: var(--clr-bg-secondary);
+  overflow: hidden;
+  height: 100%;
+  padding: 0;
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  will-change: opacity;
+}
+
+.swiper-slide-active .hero-img {
+  opacity: 1;
+}
+
+.hero-content {
+  flex: 0 0 50%;
+  max-width: 50%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4vw 6vw;
+  background: #009ace;
+  color: #fff;
+  height: 100%;
+}
+
+.hero-img-wrap.hero-img1::before {
+  /* background-image: linear-gradient(270deg, white 0%, #fff0 20%); */
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-heading {
+  font-size: 4.25rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.hero-sub-heading {
+  max-width: 500px;
+  font-size: 1.25rem;
+}
+
+.provider-row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-block: var(--spacing-lg);
+  font-size: var(--fs-lg);
+}
+
+.provider-row i {
+  color: var(--clr-text-heading);
+}
+
+.provider-row__icon {
+  margin: 0.35rem 0 0 0;
+}
+
+.provider-row__text {
+  font-weight: 500;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  max-width: 550px;
+}
+
+.btn-white {
+  border: 2px solid var(--clr-bg-primary);
+  background-color: var(--clr-bg-primary);
+  color: var(--clr-text-primary);
+}
+
+.btn-white:hover {
+  border-color: var(--clr-bg-primary);
+  background-color: var(--clr-bg-primary);
+  color: var(--clr-primary);
+}
+
+/* Hero content variants */
+.hero-content--light {
+  background-color: var(--clr-bg-primary);
+  color: var(--clr-text-primary);
+}
+
+/* Hero heading variants */
+.hero-heading--light {
+  color: var(--clr-text-primary);
+}
+
+.hero-heading--dark {
+  color: var(--clr-text-heading);
+}
+
+.hero-heading--accent {
+  color: var(--clr-accent);
+}
+
+.hero-heading--slide1 {
+  color: var(--clr-text-heading);
+}
+
+.hero-heading--slide2 {
+  color: var(--clr-bg-primary);
+}
+
+.hero-heading--slide3 {
+  color: var(--clr-text-heading);
+}
+
+.hero-heading--slide4 {
+  color: var(--clr-text-heading);
+}
+
+/* Hero image positioning */
+.hero-img-position-center {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Swiper pagination bullets custom style for hero carousel */
+.hero-carousel .swiper-pagination-bullet {
+  background: #d0d8e6;
+  opacity: 1;
+  transition: background 0.2s;
+}
+
+.hero-carousel .swiper-pagination-bullet-active {
+  background: black;
+}
+
+.swiper-slide {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-width: 0 !important;
+}
+
+.swiper-pagination {
+  width: 100vw !important;
+}
+
+.hero-carousel .bg-blue {
+  background: #009ace;
+}
+
+.bg-blue>.hero-img-wrap {
+  background: transparent;
+}
+
+/* Hero Carousel Responsive Styles */
+@media (max-width: 1200px) {
+  .hero-heading {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-carousel {
+    min-height: auto;
+    height: auto;
+    background: transparent;
+    padding-block: 0 !important;
+  }
+
+  .swiper-slide.hero-slide {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hero-img-wrap,
+  .hero-content {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-img-wrap {
+    height: 50vh;
+    min-height: 300px;
+  }
+
+  .hero-content {
+    height: auto;
+    min-height: 400px;
+    padding: 2rem;
+  }
+
+  .hero-heading {
+    font-size: 2.5rem;
+    line-height: 1.15;
+  }
+
+  .hero-sub-heading {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-carousel {
+    min-height: auto;
+    height: auto;
+  }
+
+  .swiper-slide.hero-slide {
+    flex-direction: column;
+  }
+
+  .hero-img-wrap {
+    height: 40vh;
+    min-height: 240px;
+  }
+
+  .hero-img-wrap.hero-img1::before {
+    background-image: none;
+  }
+
+  .hero-content {
+    min-height: 360px;
+    padding: 2.25rem 1.25rem 1.25rem;
+    justify-content: flex-start;
+    text-align: center;
+  }
+
+  .hero-content>a {
+    margin-inline: auto;
+  }
+
+  .hero-heading {
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+
+  .hero-sub-heading {
+    font-size: 1rem;
+  }
+
+  .provider-row {
+    gap: 0.5rem;
+    margin-block: 1rem 1.5rem;
+  }
+
+  .provider-row i {
+    display: none;
+  }
+
+  .provider-row__icon {
+    margin: 0.5rem 0.25rem 0 0;
+  }
+
+  .provider-row__text {
+    font-size: var(--fs-base);
+  }
+
+  .hero-img--position-right {
+    object-position: center;
+  }
+}
+
+/* =====================================================================
+   2. WHY INVISALIGN (Grid of Colored Cards)
+===================================================================== */
+
+.why-invisalign {
+  background-color: var(--clr-bg-primary);
+}
+
+.why-invisalign-outer {
+  border-radius: 2rem;
+}
+
+.why-invisalign-title {
+  font-size: 3rem;
+  color: var(--clr-text);
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
+  color: var(--clr-text-primary);
+  line-height: 1.15;
+}
+
+.why-invisalign-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: .75rem;
+}
+
+.why-invisalign-card {
+  background: var(--clr-bg-primary);
+  border: var(--ci-border);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.18s;
+}
+
+.why-invisalign-card .why-invisalign-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.why-invisalign-head {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--clr-text-secondary);
+}
+
+.why-invisalign-body {
+  font-size: 1rem;
+  color: var(--clr-text-secondary);
+  font-weight: 400;
+}
+
+/* Card background variants */
+.bg-pink {
+  background: #f9ecec;
+  border-color: #e7cfcf;
+}
+
+.bg-yellow {
+  background: #fcf7e6;
+  border-color: #e7e0c7;
+}
+
+/* Grid positioning classes */
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-2-row {
+  grid-row: span 2;
+}
+
+.why-invisalign-card.span-2 {
+  grid-column: span 2;
+  align-self: start;
+  height: auto;
+}
+
+.why-invisalign-card.span-2-row {
+  grid-row: span 2;
+  align-self: stretch;
+  height: 100%;
+}
+
+.why-invisalign-card:not(.span-2):not(.span-2-row) {
+  align-self: stretch;
+  height: 100%;
+}
+
+/* Card-specific positioning */
+@media (min-width: 900px) {
+  .card-1 {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .card-2 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .card-3 {
+    grid-column: 3;
+    grid-row: 1 / span 3;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-4 {
+    grid-column: 4 / span 2;
+    grid-row: 1;
+    align-self: start;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-5 {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    align-self: start;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-6 {
+    grid-column: 4;
+    grid-row: 2 / span 2;
+  }
+
+  .card-7 {
+    grid-column: 5;
+    grid-row: 2 / span 2;
+  }
+}
+
+.review-logos {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Why Invisalign Responsive Styles */
+@media (max-width: 1200px) {
+  .why-invisalign-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .why-invisalign-card.span-2,
+  .why-invisalign-card.span-2-row {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-invisalign-outer {
+    border-radius: 1rem;
+  }
+
+  .why-invisalign-title {
+    font-size: 2rem;
+  }
+
+  .why-invisalign-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .why-invisalign-card,
+  .why-invisalign-card.span-2,
+  .why-invisalign-card.span-2-row {
+    grid-column: span 1;
+    grid-row: auto;
+    height: auto;
+    align-self: stretch;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .why-invisalign-title {
+    margin-bottom: 2rem;
+  }
+
+  .why-invisalign-head {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .stack-mobile {
+    flex-direction: column;
+  }
+}
+
+/* =====================================================================
+   3. EXPERTISE & INNOVATION
+===================================================================== */
+
+.expertise-section {
+  background: var(--clr-bg-secondary);
+}
+
+.expertise-section-inner {
+  padding: 0 4rem;
+  background-color: var(--clr-bg-primary);
+  border-radius: var(--radius-xl);
+}
+
+.expertise-section-bg {
+  padding-block: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.expertise-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.expertise-content {
+  flex: 1 1 380px;
+  min-width: 320px;
+  max-width: 600px;
+}
+
+.expertise-eyebrow {
+  margin-bottom: 1rem;
+  color: var(--clr-text-muted);
+  letter-spacing: 0.08em;
+  font-size: var(--fs-base);
+  font-weight: 600;
+}
+
+.expertise-title {
+  font-size: var(--fs-5xl);
+  color: var(--clr-text-primary);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.expertise-hr {
+  border: none;
+  border-top: 2px solid var(--clr-border);
+  width: 360px;
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.expertise-text {
+  font-size: var(--fs-lg);
+  color: var(--clr-text-secondary);
+}
+
+.expertise-main-img {
+  max-width: 580px;
+  width: auto;
+  max-height: 400px;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  object-fit: cover;
+}
+
+.expertise-img-col {
+  flex: 1 1 380px;
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+}
+
+.expertise-doctor-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+  padding-block: 2.5rem;
+}
+
+.expertise-doctor-portrait {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expertise-doctor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.expertise-doctor-label {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  font-weight: 500;
+}
+
+.expertise-doctor-name {
+  font-size: 1.75rem;
+  color: var(--clr-text-primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.expertise-doctor-quote {
+  max-width: 1000px;
+  font-size: var(--fs-lg);
+  color: var(--clr-text-secondary);
+  font-weight: 400;
+  margin-bottom: 1.25rem;
+}
+
+.expertise-box {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 0.05);
+}
+
+.expertise-main-img {
+  border-radius: var(--radius-md);
+}
+
+.expertise-image {
+  width: 100%;
+}
+
+.expertise-img {
+  width: 100%;
+}
+
+.doctor-card {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+  align-items: flex-start;
+}
+
+.doctor-name {
+  font-family: "DM Serif Display", serif;
+}
+
+.expertise-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--clr-accent);
+  border-radius: 50%;
+}
+
+/* Expertise Responsive Styles */
+@media (min-width: 992px) {
+  .expertise-box {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+}
+
+@media (max-width: 1024px) {
+  .expertise-section-inner {
+    padding: 0 2rem;
+  }
+  
+  .expertise-section-bg, 
+  .expertise-flex {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  
+  .expertise-img-col {
+    justify-content: center;
+  }
+  
+  .expertise-doctor-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .doctor-card {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .expertise-doctor-card {
+    align-items: center;
+  }
+  
+  .expertise-section-inner {
+    padding: 0 1.5rem;
+  }
+  
+  .expertise-content {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: auto;
+  }
+
+  .expertise-img-col {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: auto;
+  }
+  
+  .expertise-hr {
+    width: 100%;
+  }
+  
+  .expertise-title {
+    font-size: 1.5rem;
+  }
+  
+  .expertise-main-img {
+    max-width: 100%;
+  }
+  
+  .expertise-doctor-meta {
+    text-align: center;
+  }
+  
+  .expertise-doctor-quote {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* =====================================================================
+   4. INVISALIGN TREATMENT PROCESS (TIMELINE)
+===================================================================== */
+
+.invisalign-process-timeline {
+  background: var(--clr-bg-primary);
+}
+
+.invisalign-process-title {
+  text-align: center;
+  color: var(--clr-text-heading);
+  font-size: var(--fs-5xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-xl);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.invisalign-timeline {
+  position: relative;
+  margin: 0 auto;
+  max-width: 900px;
+  padding-left: 40px;
+}
+
+.invisalign-timeline::before {
+  content: "";
+  position: absolute;
+  left: 47px;
+  top: 8px;
+  bottom: 0;
+  width: 4px;
+  background: var(--clr-accent);
+  opacity: 0.4;
+  z-index: 0;
+  border-radius: 2px;
+}
+
+.invisalign-timeline::after {
+  content: "";
+  position: absolute;
+  left: 45px;
+  bottom: -0.25rem;
+  width: 8px;
+  height: 8px;
+  background: #dbb43a;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+.invisalign-timeline-step {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: var(--spacing-lg);
+}
+
+.invisalign-timeline-step:last-child {
+  margin-bottom: 0;
+}
+
+.invisalign-timeline-icon {
+  position: relative;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  background: var(--clr-bg-primary);
+  border: 3px solid var(--clr-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-right: var(--spacing-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.invisalign-timeline-icon i {
+  color: var(--clr-accent);
+  border-radius: 50%;
+  font-size: 1.125rem;
+}
+
+.checkmark {
+  color: var(--clr-bg-secondary);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.invisalign-timeline-content {
+  background: transparent;
+  padding-bottom: 0.5rem;
+}
+
+.invisalign-timeline-step-title {
+  font-size: var(--fs-2xl);
+  font-weight: 600;
+  color: var(--clr-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.invisalign-timeline-content p {
+  color: var(--clr-text-secondary);
+  font-size: var(--fs-lg);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Timeline Responsive Styles */
+@media (max-width: 700px) {
+  .invisalign-timeline {
+    padding-left: 0;
+  }
+
+  .invisalign-timeline::before {
+    left: 17px;
+  }
+
+  .invisalign-timeline::after {
+    left: 15px;
+  }
+
+  .invisalign-timeline-icon {
+    min-width: 38px;
+    margin-right: var(--spacing-sm);
+    margin-top: 0.25rem;
+    border: none;
+    box-shadow: none;
+  }
+
+  .invisalign-process-title {
+    font-size: var(--fs-3xl);
+    padding: 0 0.5rem;
+  }
+
+  .invisalign-timeline-step {
+    margin-bottom: 1rem;
+  }
+
+  .invisalign-timeline-step-title {
+    font-size: var(--fs-lg);
+  }
+
+  .invisalign-timeline-content p {
+    font-size: var(--fs-base);
+  }
+}
+
+/* =====================================================================
+   5. INVISALIGN VIDEO SECTION
+===================================================================== */
+
+.invisalign-video-section {
+  background: var(--clr-bg-primary);
+}
+
+.invisalign-video-title {
+  color: var(--clr-text-primary);
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.invisalign-video-embed {
+  display: flex;
+  justify-content: center;
+}
+
+.invisalign-video-embed-card {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 16/9;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #000;
+}
+
+.invisalign-video-embed-card iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.invisalign-video-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-2xl);
+  flex-wrap: wrap;
+}
+
+.invisalign-video-left {
+  flex: 1 1 340px;
+  min-width: 260px;
+  max-width: 580px;
+}
+
+.invisalign-video-title {
+  text-align: left;
+  margin-bottom: var(--spacing-md);
+}
+
+.invisalign-video-desc {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-sm) auto;
+  color: var(--clr-text-secondary);
+  font-size: var(--fs-lg);
+}
+
+.invisalign-video-desc:not(:first-of-type) {
+  color: var(--clr-text-secondary);
+  font-size: var(--fs-lg);
+  font-weight: normal;
+  margin-bottom: var(--spacing-sm);
+}
+
+.invisalign-video-right {
+  flex: 1 1 380px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: center;
+  justify-content: center;
+}
+
+.invisalign-video-right-mobile {
+  display: none;
+}
+
+.invisalign-video-embed-card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 16/9;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Video Section Responsive Styles */
+@media (max-width: 900px) {
+  .invisalign-video-flex {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: stretch;
+  }
+
+  .invisalign-video-left,
+  .invisalign-video-right {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .invisalign-video-embed-card {
+    max-width: 100vw;
+    border-radius: 0.5rem;
+  }
+
+  .invisalign-video-title {
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 800px) {
+  .invisalign-video-embed-card {
+    max-width: 100vw;
+    border-radius: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .invisalign-video-title {
+    font-size: var(--fs-3xl);
+  }
+
+  .invisalign-video-right {
+    display: none;
+  }
+
+  .invisalign-video-right-mobile {
+    display: flex;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .invisalign-video-desc {
+    margin: 0 auto var(--spacing-md) auto;
+  }
+
+  .invisalign-video-desc:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+/* =====================================================================
+   6. BEFORE & AFTER SLIDER
+===================================================================== */
+
+.before-after-slider.section {
+  background: var(--clr-bg-secondary);
+}
+
+.process {
+  background-color: var(--clr-bg-secondary);
+}
+
+.process-heading {
+  font-size: var(--fs-700, 3rem);
+  color: var(--clr-text-heading)
+}
+
+.carousel-wrapper {
+  overflow-x: auto;
+}
+
+.process-steps {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  padding-block: var(--spacing-lg);
+  width: 100%;
+  position: relative;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 20%;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  scroll-snap-align: center;
+  position: relative;
+}
+
+.step-num {
+  color: var(--clr-accent);
+  font-weight: 600;
+}
+
+.step-title {
+  flex: 0 0 80px;
+  font-weight: 600;
+  color: var(--clr-text);
+  margin-block: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--fs-3xl);
+  line-height: 1.2;
+}
+
+.step-text {
+  flex-grow: 1;
+  font-size: var(--fs-lg);
+  padding-top: 1rem;
+  border-top: 1px solid black;
+  color: var(--clr-text-secondary);
+}
+
+/* Before & After Grid */
+.before-after-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  background: var(--clr-bg-secondary);
+  border-radius: 1.5rem;
+  margin: 3rem auto;
+  max-width: 90vw;
+  padding: 2.5rem 1.5rem;
+  position: relative;
+  gap: 3.5rem 0;
+}
+
+.before-after-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  max-width: 300px;
+  min-height: 120px;
+  padding: 0 1rem;
+  margin-inline: auto;
+}
+
+.ba-img {
+  width: 100%;
+  min-width: auto;
+  border-radius: 0.5rem;
+  max-width: 100%;
+  display: inline-block;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.ba-label {
+  font-weight: 600;
+  color: #22343c;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  margin-top: 0.25rem;
+}
+
+/* Dividers */
+.before-after-grid::before,
+.before-after-grid::after {
+  content: "";
+  position: absolute;
+  background: #777777;
+  z-index: 1;
+}
+
+.before-after-grid::before {
+  /* Horizontal divider */
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-1px);
+}
+
+.before-after-grid::after {
+  /* Vertical divider */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-1px);
+}
+
+/* Slider Components */
+.slick-slide {
+  padding: 15px;
+  margin-inline: auto;
+}
+
+.pt-1 {
+  padding-top: 1rem;
+}
+
+.pb-1 {
+  padding-bottom: 1rem;
+}
+
+.slide-wrapper {
+  background-color: #ebf8ff;
+}
+
+.slide-title {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.slide-images>img {
+  max-width: 100%;
+}
+
+.slide-range {
+  position: relative;
+}
+
+.slider-range {
+  width: 100%;
+  height: 2px;
+  border-radius: 5px;
+  background: #2f2f2f;
+  outline: none;
+}
+
+.slide-week {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-slides {
+  display: flex;
+  overflow: hidden;
+  width: 900px;
+}
+
+.carousel-slide {
+  min-width: 410px;
+  margin: 0 10px;
+  flex-shrink: 0;
+  display: none;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.review-dots.review-dots-invisalign {
+  display: none;
+}
+
+/* Before & After Responsive Styles */
+@media (max-width: 900px) {
+  .before-after-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1.5rem 0;
+  }
+
+  .before-after-grid::before,
+  .before-after-grid::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .before-after-slider .review-plain-col {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .before-after-grid {
+    margin-block: 0;
+    padding: 0;
+  }
+
+  .before-after-cell {
+    padding: 0.25rem;
+  }
+
+  .ba-label {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 1366px) {
+  .slick-slide {
+    max-width: 100%;
+  }
+}
+
+/* =====================================================================
+   7. COMMITMENT SECTION
+===================================================================== */
+
+.commitment {
+  background: var(--clr-bg-secondary);
+}
+
+.commitment-title {
+  font-size: var(--fs-700);
+  text-align: center;
+  max-width: 28ch;
+  margin-inline: auto;
+}
+
+.commitment-box {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 28px rgb(0 0 0 / 0.06);
+}
+
+.commitment-heading {
+  font-size: var(--fs-5xl);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.15;
+  color: var(--clr-text-primary)
+}
+
+.commitment-text {
+  max-width: 1300px;
+  margin-bottom: var(--spacing-md);
+  margin-inline: auto;
+  font-size: var(--fs-xl);
+  color: var(--clr-text-subheading-soft);
+}
+
+.commitment-text:last-of-type {
+  max-width: 900px;
+}
+
+/* Commitment Responsive Styles */
+@media (max-width: 480px) {
+  .commitment-heading {
+    font-size: var(--fs-3xl);
+  }
+
+  .commitment-text {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* =====================================================================
+   8. INVISALIGN SMILE QR SECTION
+===================================================================== */
+
+.invisalign-qr-section {
+  background: var(--clr-bg-primary);
+}
+
+.invisalign-qr-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap;
+  max-width: 1300px;
+}
+
+.invisalign-qr-left {
+  flex: 1 1 380px;
+  min-width: 320px;
+  max-width: 540px;
+}
+
+.invisalign-qr-label {
+  color: var(--clr-text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.25rem;
+}
+
+.invisalign-qr-heading {
+  font-size: var(--fs-5xl);
+  font-weight: 700;
+  color: var(--clr-text-heading);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.15;
+}
+
+.invisalign-qr-heading .text-primary {
+  color: var(--clr-accent);
+}
+
+.invisalign-qr-subtitle {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--clr-text-primary);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.01em;
+}
+
+.invisalign-qr-steps-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Replace the separate line div with ::before */
+.invisalign-qr-steps-wrap::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: calc(1.1rem);
+  bottom: -0.5rem;
+  width: 4px;
+  background: #dbb43a;
+  opacity: 0.4;
+  z-index: 0;
+  border-radius: 2rem;
+}
+
+/* Replace the separate dot div with ::after */
+.invisalign-qr-steps-wrap::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  bottom: -0.9rem;
+  width: 8px;
+  height: 8px;
+  background: #dbb43a;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+.invisalign-qr-steps {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.invisalign-qr-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  font-size: var(--fs-lg);
+  color: var(--clr-text-secondary);
+  font-weight: 500;
+}
+
+.invisalign-qr-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--clr-accent);
+  color: var(--clr-bg-secondary);
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.invisalign-qr-note {
+  display: block;
+  font-size: var(--fs-sm);
+  color: var(--clr-text-secondary);
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+.invisalign-qr-right {
+  flex: 1 1 340px;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.invisalign-qr-phone-mockup {
+  position: relative;
+  width: 320px;
+  max-width: 100%;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.invisalign-qr-phone-img {
+  width: 100%;
+  max-width: 320px;
+}
+
+.invisalign-qr-code-wrap {
+  position: absolute;
+  bottom: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-bg-secondary);
+  border-radius: 50%;
+}
+
+.invisalign-qr-code-img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  display: block;
+}
+
+/* QR Section Responsive Styles */
+@media (max-width: 900px) {
+  .invisalign-qr-flex {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: stretch;
+  }
+
+  .invisalign-qr-left,
+  .invisalign-qr-right {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .invisalign-qr-phone-mockup {
+    width: 100%;
+    max-width: 340px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .invisalign-qr-heading {
+    font-size: var(--fs-2xl);
+  }
+
+  .invisalign-qr-phone-mockup {
+    max-width: 98vw;
+  }
+
+  .invisalign-qr-code-img {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+@media (max-width: 480px) {
+  .invisalign-qr-heading {
+    font-size: var(--fs-3xl);
+  }
+
+  .invisalign-qr-phone-img {
+    max-width: 240px;
+  }
+}
+
+/* =====================================================================
+   9. FAQ SECTION
+===================================================================== */
+
+.invisalign-faq-section {
+  background: var(--clr-bg-primary);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+}
+
+.faq-header-cta {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.faq-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.faq-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-block: 2rem;
+  color: var(--clr-text);
+  line-height: 1.15;
+}
+
+.faq-desc {
+  font-size: 1.25rem;
+  color: var(--clr-text-secondary);
+  max-width: 540px;
+}
+
+/* .faq-cta {
+  margin-top: var(--spacing-lg);
+} */
+
+.faq-cta-title {
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--clr-text);
+}
+
+.faq-cta-desc {
+  font-size: var(--fs-lg);
+  color: var(--clr-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Services FAQ Styles */
+.invisalign-faqs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-lg) 0 var(--spacing-xl);
+  width: 50%;
+}
+
+.invisalign-faq-item {
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.invisalign-faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--clr-bg-primary);
+  border: none;
+  text-align: left;
+  font-size: var(--fs-lg);
+  color: var(--clr-text-primary);
+  cursor: pointer;
+}
+
+.invisalign-faq-icon {
+  font-size: var(--fs-2xl);
+  font-weight: 400;
+  color: var(--clr-text-primary);
+  transition: var(--trans-fast);
+  line-height: 1;
+  margin-left: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.invisalign-faq-answer {
+  background: var(--clr-bg-primary);
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--trans-fast);
+}
+
+.invisalign-faq-answer:not([hidden]) {
+  padding: 0 var(--spacing-md) var(--spacing-md);
+  max-height: 500px;
+}
+
+.invisalign-faq-answer p {
+  color: var(--clr-text-secondary);
+  line-height: 1.8;
+  margin: 0;
+  font-size: var(--fs-base);
+}
+
+/* FAQ Responsive Styles */
+@media (max-width: 900px) {
+  .invisalign-faq-section {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .faq-header-cta,
+  .invisalign-faqs {
+    width: 100%;
+  }
+
+  .invisalign-faq-question {
+    padding: var(--spacing-sm);
+    font-size: var(--fs-base);
+  }
+
+  .invisalign-faq-answer:not([hidden]) {
+    padding: 0 var(--spacing-sm) var(--spacing-sm);
+    max-width: calc(100% - 1.5rem);
+  }
+
+  .invisalign-faq-answer p {
+    font-size: var(--fs-base);
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-header {
+    margin-bottom: 0;
+    padding-inline: 0;
+  }
+
+  .invisalign-faqs {
+    margin: 0;
+  }
+}
+
+/* =====================================================================
+   10. TESTIMONIALS
+===================================================================== */
+
+/* Testimonials use existing review-plain classes from global CSS */
+
+/* =====================================================================
+   11. FINAL CTA SECTION
+===================================================================== */
+
+.invisalign-cta-section {
+  padding-block: var(--spacing-md);
+  background: var(--clr-bg, #fff);
+}
+
+.invisalign-cta-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.invisalign-cta-left {
+  flex: 1 1 0;
+}
+
+.invisalign-cta-title {
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-bottom: 0;
+}
+
+.invisalign-cta-right {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.invisalign-cta-desc {
+  font-size: 1.15rem;
+  color: var(--clr-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.invisalign-cta-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* CTA Section - Final Call to Action */
+.cta.section {
+  color: var(--clr-text-primary);
+  text-align: center;
+  background-color: var(--clr-bg-primary);
+  padding-block: var(--spacing-2xl);
+}
+
+.cta h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--clr-text-heading);
+}
+
+.cta p {
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  color: var(--clr-text-secondary);
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Final CTA Responsive Styles */
+@media (max-width: 900px) {
+  .invisalign-cta-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xl);
+  }
+
+  .invisalign-cta-right {
+    align-items: flex-start;
+  }
+
+  .invisalign-cta-desc {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
+
+  .faq-cta.container {
+    display: none;
+  }
+}
+
+/* =====================================================================
+   MOTION REVEAL (Optional)
+===================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+  }
+
+  [data-reveal].in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================================
+   INVISALIGN TREATMENT SLIDER
+===================================================================== */
+
+.invisalign-treatment-slider {
+  padding: var(--spacing-2xl);
+}
+
+.invisalign-treatment-slider-container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  /* padding: 0 1rem; */
+}
+
+.invisalign-treatment-slider-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  text-align: center;
+  color: var(--clr-text-primary);
+  line-height: 1.15;
+}
+
+.invisalign-treatment-slider-subtitle {
+  font-size: 1.25rem;
+  color: var(--clr-text-subheading-soft);
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 1050px;
+  margin-inline: auto;
+}
+
+.invisalign-treatment-slider-slider {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.invisalign-treatment-slider-track {
+  display: flex;
+  gap: 10%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  margin-top: 1rem;
+  margin-left: 5%;
+  width: fit-content;
+}
+
+.invisalign-treatment-slider-col {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  background: var(--clr-bg-primary);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.invisalign-treatment-slider-col:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.invisalign-treatment-slider-wrapper {
+  background-color: #ebf8ff;
+  padding: 1rem;
+}
+
+.invisalign-treatment-slider-slide-title {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.invisalign-treatment-slider-images > img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.invisalign-treatment-slider-range {
+  position: relative;
+  margin: 1rem 0;
+}
+
+/* Remove default appearance */
+.slider-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px; /* Track height */
+  background: #2f2f2f; /* Track color */
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+/* Track (the line) */
+.slider-range::-webkit-slider-runnable-track {
+  height: 2px;
+  background: #2f2f2f;
+  border-radius: 5px;
+}
+
+.slider-range::-moz-range-track {
+  height: 2px;
+  background: #2f2f2f;
+  border-radius: 5px;
+}
+
+.slider-range::-ms-fill-lower,
+.slider-range::-ms-fill-upper {
+  height: 2px;
+  background: #2f2f2f;
+  border-radius: 5px;
+}
+
+/* Thumb (the circle/handle) */
+.slider-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #2c2c2c;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: -8px; /* Center thumb on track */
+}
+
+/* .slider-range:focus::-webkit-slider-thumb {
+  background: #1976d2;
+} */
+
+.slider-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #2c2c2c;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* .slider-range:focus::-moz-range-thumb {
+  background: #1976d2;
+} */
+
+.slider-range::-ms-thumb {
+  width: 18px;
+  height: 18px;
+  background: #2c2c2c;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* .slider-range:focus::-ms-thumb {
+  background: #1976d2;
+} */
+
+/* Remove outline on Firefox */
+.slider-range::-moz-focus-outer {
+  border: 0;
+}
+
+/* Optional: Fill before/after thumb (for progress effect) */
+.slider-range::-webkit-slider-thumb {
+  box-shadow: 0 0 2px #2196f3;
+}
+.slider-range:focus {
+  outline: none;
+}
+
+/* Hide the outline in IE */
+.slider-range:focus::-ms-fill-lower {
+  background: #e0e0e0;
+}
+
+/* For IE (old Edge) */
+.slider-range::-ms-tooltip {
+  display: none;
+}
+
+/* For better cross-browser support */
+/* @supports (-webkit-appearance: none) {
+  .slider-range { */
+    /* Only apply for browsers that support it */
+  /* }
+} */
+
+.invisalign-treatment-slider-week {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.invisalign-treatment-slider-text-container {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  color: var(--clr-text-secondary);
+}
+
+.invisalign-treatment-slider-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.invisalign-treatment-slider-dots {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.invisalign-treatment-slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.invisalign-treatment-slider-dot.active,
+.invisalign-treatment-slider-dot:hover {
+  background: var(--clr-primary);
+  transform: scale(1.2);
+}
+
+.invisalign-treatment-slider-arrows {
+  display: flex;
+  gap: 1rem;
+  height: 4rem;
+}
+
+.invisalign-treatment-slider-arrow {
+  background: var(--clr-bg-primary);
+  border: 1px solid #6666;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--gray-700);
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.invisalign-treatment-slider-arrow > i {
+  transition: transform 0.2s ease;
+}
+
+.invisalign-treatment-slider-arrow.invisalign-treatment-slider-arrow-left:hover > i {
+  transform: translateX(-4px);
+}
+
+.invisalign-treatment-slider-arrow.invisalign-treatment-slider-arrow-right:hover > i {
+  transform: translateX(4px);
+}
+
+.invisalign-treatment-slider-arrow:focus,
+.invisalign-treatment-slider-arrow:active {
+  outline: none;
+}
+
+/* Invisalign Treatment Slider Responsive Styles */
+@media (max-width: 1024px) {
+  .invisalign-treatment-slider-track {
+    gap: 5%;
+    margin-left: 2.5%;
+    width: calc(100% + 1rem);
+  }
+
+  .invisalign-treatment-slider-col {
+    padding: 1.5rem;
+    min-width: 95%;
+  }
+
+  .invisalign-treatment-slider-col:hover {
+    transform: translateY(0);
+  }
+
+  .invisalign-treatment-slider-controls {
+    justify-content: center;
+    margin-bottom: .125rem;
+  }
+
+  .invisalign-treatment-slider-dots {
+    display: none;
+  }
+
+  .invisalign-treatment-slider-arrows {
+    display: flex;
+  }
+
+  .invisalign-treatment-slider-arrow.invisalign-treatment-slider-arrow-left:hover > i,
+  .invisalign-treatment-slider-arrow.invisalign-treatment-slider-arrow-right:hover > i {
+    transform: translateX(0px);
+  }
+  
+  .invisalign-treatment-slider-arrow.invisalign-treatment-slider-arrow-right:active > i {
+    transform: translateX(4px);
+  }
+  
+  .invisalign-treatment-slider-arrow.invisalign-treatment-slider-arrow-left:active > i {
+    transform: translateX(-4px);
+  }
+}
+
+@media (max-width: 768px) {
+  .invisalign-treatment-slider {
+    padding: var(--spacing-xl) 1rem;
+  }
+
+  .invisalign-treatment-slider-title {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .invisalign-treatment-slider-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .invisalign-treatment-slider-track {
+    margin-left: 2.5%;
+    width: 100%;
+  }
+
+  .invisalign-treatment-slider-col {
+    padding: 1.5rem;
+    min-width: 95%;
+    box-sizing: border-box;
+  }
+
+  .invisalign-treatment-slider-controls {
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .invisalign-treatment-slider-arrows {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .invisalign-treatment-slider-dots {
+    order: -1;
+    margin-left: 0;
+  }
+
+  .invisalign-treatment-slider-arrow {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .invisalign-treatment-slider-arrow.invisalign-treatment-slider-arrow-left:hover > i,
+  .invisalign-treatment-slider-arrow.invisalign-treatment-slider-arrow-right:hover > i {
+    transform: translateX(0px);
+  }
+  
+  .invisalign-treatment-slider-arrow.invisalign-treatment-slider-arrow-right:active > i {
+    transform: translateX(4px);
+  }
+  
+  .invisalign-treatment-slider-arrow.invisalign-treatment-slider-arrow-left:active > i {
+    transform: translateX(-4px);
+  }
+}
+
+@media (max-width: 480px) {
+  .invisalign-treatment-slider {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .invisalign-treatment-slider-title {
+    font-size: clamp(2rem, 6vw, 2.2rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .invisalign-treatment-slider-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .invisalign-treatment-slider-track {
+    gap: 5%;
+    margin-left: 2.5%;
+    width: 100%;
+  }
+
+  .invisalign-treatment-slider-col {
+    max-width: 100%;
+    min-width: 95%;
+    flex: 0 0 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .invisalign-treatment-slider-col > div {
+    width: 100% !important;
+  }
+
+  .slider-range {
+    height: 1.5px;
+  }
+
+  .invisalign-treatment-slider-controls {
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .invisalign-treatment-slider-arrows {
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .invisalign-treatment-slider-dots {
+    order: -1;
+    margin-left: 0;
+  }
+
+  .invisalign-treatment-slider-arrow {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}

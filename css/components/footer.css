@@ -1,0 +1,403 @@
+/* ========== FOOTER COMPONENT ========== */
+
+.site-footer {
+  /* background: var(--clr-text-heading); */
+  background:#141517;
+  /* background-image: url('/assets/images/global/footer-bg.webp'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 5rem;
+  color: var(--clr-bg-secondary);
+}
+
+.site-footer.container {
+  max-width: 100%;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2.25fr 1fr 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding-bottom: 4rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2.5rem;
+}
+
+.footer-logo {
+  width: 50%;
+}
+
+.footer-title {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 2rem 0;
+  line-height: 1.1;
+}
+
+.footer-address,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footer-col-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* color: var(--clr-accent); */
+  color: #fff;
+}
+
+.footer-contact-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-contact div i {
+  margin-right: 1rem;
+}
+
+.footer-address-block {
+  font-style: normal;
+}
+
+.address-content {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  color: #b8b8b8;
+}
+
+.address-content i {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.address-content div {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-content span {
+  display: inline-block;
+}
+
+.footer-mail-link,
+.footer-call-link {
+  color: var(--clr-bg-secondary);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  transition: color 0.2s;
+}
+
+.footer-mail-link:hover,
+.footer-call-link:hover {
+  color: #b8b8b8;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.75rem;
+}
+
+.social-icons a {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--clr-bg-secondary);
+  border-radius: 50%;
+  color: var(--clr-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+  transform: scale(0.9);
+}
+
+.social-icons a i {
+  font-size: 1.25rem;
+  margin-right: 0;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(184, 184, 184, 0.5);
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #b8b8b8;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: var(--spacing-lg)
+}
+
+.footer-bottom p {
+  color: var(--clr-bg-secondary);
+  margin: 0;
+}
+
+.footer-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footer-hours-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hours-content {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.hours-content i {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.hours-content>div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hours-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-hours-time {
+  color: #b8b8b8;
+}
+
+.footer-hours-day {
+  color: var(--clr-bg-secondary);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.mobile {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-logo {
+    width: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  .site-footer {
+    padding-top: 3.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    width: 40%;
+  }
+
+  .footer-title {
+    margin-bottom: 1rem;
+  }
+
+  .footer-contact,
+  .footer-address,
+  .footer-hours {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding-top: 3rem;
+    background-image: none;
+    background-color: #141517;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 45%;
+  }
+
+  .footer-contact,
+  .footer-address,
+  .footer-hours {
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-icons {
+    display: none;
+  }
+
+  .social-icons.mobile {
+    display: flex;
+    justify-content: center;
+  }
+
+  .address-content,
+  .hours-content {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding-top: 2.5rem;
+  }
+
+  .footer-grid {
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-logo {
+    width: 60%;
+  }
+
+  .footer-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .footer-contact,
+  .footer-address,
+  .footer-hours {
+    gap: 0.25rem;
+  }
+
+  .footer-contact>div:first-of-type {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-col-title {
+    font-size: 1.25rem;
+  }
+
+  .social-icons {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .social-icons a {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .social-icons a i {
+    font-size: 1rem;
+  }
+
+  .footer-bottom {
+    padding: 1rem 0;
+  }
+
+  .footer-bottom-links {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+  }
+
+  /* WhatsApp button adjustments for mobile */
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 15px;
+    font-size: 1.75rem;
+  }
+
+  .whatsapp-button .fa-whatsapp {
+    font-size: 1.9rem;
+  }
+}
+
+
+/***********************************************************
+ * WhatsApp Floating Button
+ ***********************************************************/
+
+.whatsapp-button {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 54px;
+  right: 20px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+}
+
+.whatsapp-button.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.whatsapp-button .fa-whatsapp {
+  font-size: 2.2rem;
+  line-height: 1;
+}

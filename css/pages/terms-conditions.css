@@ -1,0 +1,63 @@
+/* Terms & Conditions Page - Plain Text Styles */
+
+.terms-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #222;
+  background: none;
+  font-family: inherit;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 5rem;
+}
+
+.terms-main h2,
+.terms-main h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.terms-main ul,
+.terms-main ol {
+  margin-left: 1.5rem;
+  list-style: disc;
+}
+
+.terms-main li {
+  margin-bottom: 0.5rem;
+}
+
+.terms-main li:first-child {
+  margin-top: 0.5rem;
+}
+
+.terms-main strong,
+.terms-main b {
+  font-weight: 600;
+}
+
+.terms-main a {
+  color: var(--clr-text-secondary);
+  font-weight: 600;
+}
+
+.terms-main section {
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 480px) {
+  .title {
+    margin-bottom: 2rem;
+    font-size: var(--fs-3xl);
+    text-align: left;
+  }
+}

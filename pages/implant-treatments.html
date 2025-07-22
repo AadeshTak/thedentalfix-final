@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Discover the life-changing benefits of dental implants. Restore your confidence and enhance your smile with our expert team." />
+  <meta name="theme-color" content="#0a938d" />
+  <title>Dental Implants | The Dental Fix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/components/navbar.css" />
+  <link rel="stylesheet" href="/css/components/footer.css" />
+  <link rel="stylesheet" href="/css/pages/implant-treatments.css" />
+</head>
+
+<body>
+  <!-- ===== NAVBAR COMPONENT ===== -->
+  <div id="navbar-placeholder"></div>
+
+  <main id="main">
+    <!-- ========== HERO SECTION ========== -->
+    <section class="implants-hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="implants-hero-icon-wrap">
+          <img src="/assets/icons/implant-hero-tooth.svg" alt="Dental implant icon" class="implants-hero-icon" />
+        </div>
+        <h1 id="hero-title" class="implants-hero-title">
+          Crafting Smiles <span class="text-highlight">with Precision</span>
+        </h1>
+        <p class="implants-hero-desc">
+          Choose from our range of implant solutions that promise to restore comfort, confidence, and a natural
+          appearance to your smile.
+        </p>
+      </div>
+    </section>
+
+    <!-- Implant Categories Section -->
+    <section class="implant-content" aria-labelledby="implant-categories">
+      <div class="implant-cats">
+        <nav class="cat-tabs" aria-label="Implant treatment categories">
+          <button class="cat-tab active" data-cat="single" aria-pressed="true">
+            Single Tooth Implant
+          </button>
+          <button class="cat-tab" data-cat="fullarch" aria-pressed="false">
+            Full Mouth
+          </button>
+          <button class="cat-tab" data-cat="immediate_implant_placement" aria-pressed="false">
+            Immediate Implant
+          </button>
+          <button class="cat-tab" data-cat="multiple" aria-pressed="false">
+            Implants for 3–4 Teeth
+          </button>
+          <button class="cat-tab" data-cat="implant_supported_dentures" aria-pressed="false">
+            Implant Dentures
+          </button>
+          <button class="cat-tab" data-cat="bone_augmentation_procedures" aria-pressed="false">
+            Bone Grafts
+          </button>
+          <button class="cat-tab" data-cat="zygomatic_implants" aria-pressed="false">
+            Zygomatic Implants
+          </button>
+        </nav>
+
+        <div class="cat-content-wrap" role="tabpanel" aria-labelledby="implant-categories">
+          <!-- Single Implant Content -->
+          <section class="cat-content cat-content-single active" data-cat="single" role="tabpanel"></section>
+
+          <!-- Multiple Implants Content -->
+          <section class="cat-content cat-content-multiple" data-cat="multiple" role="tabpanel" hidden></section>
+
+          <!-- Full Arch Content -->
+          <section class="cat-content cat-content-fullarch" data-cat="fullarch" role="tabpanel" hidden></section>
+
+          <!-- Implant Supported Dentures Content -->
+          <section class="cat-content cat-content-implant_supported_dentures" data-cat="implant_supported_dentures"
+            role="tabpanel" hidden></section>
+
+          <!-- Immediate Implant Placement Content -->
+          <section class="cat-content cat-content-immediate_implant_placement" data-cat="immediate_implant_placement"
+            role="tabpanel" hidden></section>
+
+          <!-- Bone Augmentation Procedures Content -->
+          <section class="cat-content cat-content-bone_augmentation_procedures" data-cat="bone_augmentation_procedures"
+            role="tabpanel" hidden></section>
+
+          <!-- Zygomatic Implants Content -->
+          <section class="cat-content cat-content-zygomatic_implants" data-cat="zygomatic_implants" role="tabpanel"
+            hidden></section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-box animate-on-scroll" data-delay="100" data-duration="1000">
+          <h2 id="cta-title">Ready to Experience Better Dental Care?</h2>
+          <p>
+            Schedule your appointment today and take the first step towards a
+            healthier, more beautiful smile.
+          </p>
+          <div class="cta-buttons">
+            <a href="https://in.bestosys.com/patient/#/requestAppointment/035202e01afae89f5eB"
+              class="btn btn-primary">Book Appointment</a>
+            <a href="/contact" class="btn btn-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <div id="footer-placeholder"></div>
+
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/+919552665665" class="whatsapp-button" id="whatsappBtn" target="_blank" rel="noopener"
+    aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="/js/include-components.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/implant-treatments.js"></script>
+  <script src="/js/scroll-animations.js"></script>
+</body>
+
+</html>
