@@ -5,7 +5,6 @@
 
 .contact-hero-wrap {
   display: flex;
-  flex-direction: column;
   align-items: stretch;
   justify-content: center;
   gap: var(--spacing-xl);
@@ -221,7 +220,7 @@
 /* ========== RESPONSIVE DESIGN ========== */
 
 /* Large devices (desktops, ≥992px) */
-@media (min-width: 992px) {
+/* @media (min-width: 768px) {
   .contact-hero-wrap {
     flex-direction: row;
     align-items: stretch;
@@ -237,48 +236,89 @@
     padding-left: var(--spacing-xl);
     margin-top: 0;
   }
-}
+} */
 
 /* Extra large devices (large desktops, ≥1200px) */
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .contact-hero-wrap {
     max-width: 1280px;
     margin: 0 auto;
   }
-}
+} */
 
 /* XXL devices (very large screens, ≥1400px) */
-@media (min-width: 1400px) {
+/* @media (min-width: 1400px) {
   .contact-hero-wrap {
     max-width: 1400px;
   }
-}
+} */
 
 /* Stacked layout for <992px */
-@media (max-width: 991.98px) {
-  .contact-hero-wrap {
-    flex-direction: column;
-  }
+@media (max-width: 1024px) {
   .contact-hero-content {
     order: 1;
+    max-width: 100%;
   }
+  .contact-hero-details {
+    margin-block: 0;
+  }
+
   .contact-hero-img-wrap {
     order: 2;
     padding-left: 0;
   }
+
+  .contact-hero-img-grid {
+    max-width: 100%;
+    margin-inline: auto;
+    grid-template-rows: 3fr 2fr;
+  }
+
+  .contact-hero-img-cell {
+    height: 100%;
+  }
+
+  .contact-hero-img-cell:nth-of-type(1) img,
+  .contact-hero-img-cell:nth-of-type(2) img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact-hero-img-cell:nth-of-type(3) img,
+  .contact-hero-img-cell:nth-of-type(4) img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media (max-width: 768px) {
+  .contact-hero-wrap {
+    flex-direction: column;
+  }
+
   .contact-hero-map-overlay-content {
     padding: 0.75rem 1rem;
   }
-  
+
   .contact-hero-map-overlay-content span {
     font-size: 0.85rem;
   }
 
   .contact-hero-details {
     gap: var(--spacing-sm);
+    margin-block: var(--spacing-md);
+  }
+
+  .contact-hero-img-cell:nth-of-type(1) img,
+  .contact-hero-img-cell:nth-of-type(2) img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .contact-hero-img-cell:nth-of-type(3) img,
+  .contact-hero-img-cell:nth-of-type(4) img {
+    width: 100%;
+    height: 200px;
   }
 }
 
