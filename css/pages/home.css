@@ -397,7 +397,7 @@
 /* Responsive: EXPERTISE SECTION */
 @media (max-width: 1024px) {
   .expertise-hero-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
   }
 
@@ -417,9 +417,19 @@
     max-width: 100%;
     margin-inline: auto;
   }
+  .expertise-hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: clamp(0rem, calc(2vw - 1rem), 0.75rem);
+  }
+  .expertise-hero-desc {
+    margin-bottom: clamp(0rem, calc(2vw - 1rem), 0.75rem);
+  }
+  .expertise-hero-list-title {
+    margin-bottom: clamp(0rem, calc(2vw - 1rem), 0.75rem);
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .expertise-hero-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -427,6 +437,10 @@
 }
 
 @media (max-width: 480px) {
+  .expertise-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
   .expert-main-img {
     width: 100%;
     max-height: 450px;
@@ -531,20 +545,48 @@
 
 @media (max-width: 1024px) {
   .doctor-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
   }
 
   .doctor-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: clamp(1rem, calc(2vw - 1rem), 2rem);
   }
 
   .doctor-portrait {
+    height: 100%;
     max-width: 420px;
     margin-inline: auto;
+  }
+  .portrait-img {
+    height: 100%;
   }
 
   .doctor-bio {
     max-width: 100%;
+    margin-bottom: clamp(1rem, calc(2vw - 1rem), 2rem);
+  }
+  .doctor-bio:last-of-type {
+    margin-bottom: clamp(1.5rem, calc(2vw - 1rem), 2rem);
+    display: none;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .doctor-portrait {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .portrait-img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 767px) {
+  .doctor-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -554,6 +596,7 @@
   }
 
   .doctor-title {
+    font-size: var(--fs-3xl);
     margin-bottom: 1.5rem;
   }
 
@@ -726,7 +769,7 @@
 
 @media (max-width: 1024px) {
   .services-section {
-    padding: 2.5rem 20px 2.5rem;
+    padding: 2.5rem 40px 2.5rem;
   }
 
   .services-title {
@@ -787,7 +830,16 @@
   }
 }
 
+@media (max-width: 767px) {
+  .services-section {
+    padding: 2.5rem 30px 2.5rem;
+  }
+}
+
 @media (max-width: 480px) {
+  .services-section {
+    padding: 2.5rem 20px 2.5rem;
+  }
   .services-title {
     font-size: var(--fs-3xl);
   }

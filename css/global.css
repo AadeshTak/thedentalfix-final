@@ -376,11 +376,17 @@ a {
 
 @media (max-width: 768px) {
   .container {
-    padding-inline: 20px;
+    padding-inline: 30px;
   }
 
   .section {
     padding-block: var(--spacing-lg) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-inline: 20px;
   }
 }
 

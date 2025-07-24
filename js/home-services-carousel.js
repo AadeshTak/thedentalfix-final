@@ -178,7 +178,7 @@
       // Touch/Mouse event handlers for mobile swipe
       function handleStart(e) {
         // Only enable swipe on mobile devices (width < 1024px)
-        if (window.innerWidth >= 1024) return;
+        if (window.innerWidth > 1024) return;
         
         isDragging = true;
         isHorizontalSwipe = false;
@@ -192,7 +192,7 @@
       }
   
       function handleMove(e) {
-        if (!isDragging || window.innerWidth >= 1024) return;
+        if (!isDragging || window.innerWidth > 1024) return;
         
         currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
         currentY = e.type === 'mousemove' ? e.clientY : e.touches[0].clientY;
@@ -220,7 +220,7 @@
       }
   
       function handleEnd() {
-        if (!isDragging || window.innerWidth >= 1024) return;
+        if (!isDragging || window.innerWidth > 1024) return;
         
         isDragging = false;
         track.style.transition = 'transform 0.3s ease-out';

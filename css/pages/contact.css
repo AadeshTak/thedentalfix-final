@@ -259,8 +259,12 @@
     order: 1;
     max-width: 100%;
   }
+  .contact-hero-title {
+    font-size: clamp(2.125rem, 4vw, 2.25rem);
+  }
   .contact-hero-details {
     margin-block: 0;
+    gap: 0.75rem;
   }
 
   .contact-hero-img-wrap {
@@ -291,7 +295,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .contact-hero-wrap {
     flex-direction: column;
   }

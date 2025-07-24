@@ -520,7 +520,7 @@
 }
 
 /* Why Invisalign Responsive Styles */
-@media (max-width: 1200px) {
+@media (max-width: 899px) {
   .why-invisalign-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -591,14 +591,12 @@
 .expertise-section-bg {
   padding-block: 2.5rem;
   display: flex;
-  flex-wrap: wrap;
   gap: 2.5rem;
   align-items: center;
 }
 
 .expertise-flex {
   display: flex;
-  flex-wrap: wrap;
   gap: 2.5rem;
   align-items: center;
 }
@@ -662,7 +660,7 @@
 }
 
 .expertise-doctor-portrait {
-  width: 200px;
+  min-width: 200px;
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
@@ -748,9 +746,17 @@
   
   .expertise-section-bg, 
   .expertise-flex {
-    flex-direction: column;
     gap: 2rem;
     align-items: stretch;
+  }
+  .expertise-content {
+    max-width: 100%;
+  }
+  .expertise-eyebrow {
+    font-size: 0.875rem;
+  }
+  .expertise-title {
+    font-size: 2.25rem;
   }
   
   .expertise-img-col {
@@ -758,9 +764,35 @@
   }
   
   .expertise-doctor-card {
-    flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .expertise-eyebrow {
+    font-size: 0.75rem;
+  }
+  .expertise-title {
+    font-size: 1.75rem;
+  }
+  .expertise-hr {
+    margin: 0.75rem 0;
+  }
+  .expertise-img-col {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .expertise-flex {
+    flex-direction: column;
+  }
+  .expertise-content {
+    flex: 1 1 100%;
+  }
+  .expertise-doctor-card {
+    flex-direction: column;
   }
 }
 
@@ -975,6 +1007,7 @@
 .invisalign-video-title {
   color: var(--clr-text-primary);
   font-size: 2.75rem;
+  line-height: 1.15;
   font-weight: 700;
   margin-bottom: var(--spacing-md);
 }
@@ -1060,6 +1093,14 @@
 }
 
 /* Video Section Responsive Styles */
+@media (max-width: 1024px) {
+  .invisalign-video-title {
+    font-size: 2rem;
+  }
+  .invisalign-video-embed-card {
+    height: calc(50% - 2rem);
+  }
+}
 @media (max-width: 900px) {
   .invisalign-video-flex {
     flex-direction: column;
@@ -1073,9 +1114,17 @@
     min-width: 0;
   }
 
+  .invisalign-video-right {
+    flex-direction: row;
+  }
+  .invisalign-video-desc {
+    max-width: 100%;
+  }
+
   .invisalign-video-embed-card {
     max-width: 100vw;
     border-radius: 0.5rem;
+    height: 100%;
   }
 
   .invisalign-video-title {
@@ -1101,6 +1150,7 @@
 
   .invisalign-video-right-mobile {
     display: flex;
+    flex-direction: column;
     margin-bottom: var(--spacing-md);
   }
 
@@ -1732,15 +1782,40 @@
 }
 
 /* FAQ Responsive Styles */
+@media (max-width: 1290px) and (min-width: 1025px) {
+  .faq-header {
+    padding: 0;
+  }
+  .faq-cta {
+    padding: 0;
+  }
+}
 @media (max-width: 900px) {
   .invisalign-faq-section {
     flex-direction: column;
     gap: var(--spacing-lg);
   }
 
-  .faq-header-cta,
+  .faq-header-cta {
+    max-width: 100%;
+    width: 100%;
+  }
   .invisalign-faqs {
     width: 100%;
+  }
+  .faq-header {
+    margin-bottom: 0;
+    padding-inline: 1rem;
+  }
+  .faq-desc {
+    max-width: 100%;
+  }
+  .faq-cta {
+    display: none;
+  }
+
+  .invisalign-faqs {
+    margin: 0;
   }
 
   .invisalign-faq-question {
