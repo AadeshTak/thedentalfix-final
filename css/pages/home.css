@@ -162,6 +162,12 @@
 }
 
 /* Responsive: HERO SECTION */
+@media (max-width: 1440px) and (min-width: 1025px) {
+  .hero-heading {
+    max-width: clamp(500px, 45vw, 650px);
+  }
+}
+
 @media (max-width: 1440px) {
   .hero-img {
     width: 100%;
